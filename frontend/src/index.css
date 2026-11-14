@@ -1,0 +1,392 @@
+/* SkyGuard AI — design tokens and base styles.
+   Light-first instrument-panel system. Every colour and font goes through
+   the @theme tokens below; no literal colour or font-family past this block. */
+
+@import "leaflet/dist/leaflet.css";
+@import "tailwindcss";
+
+@theme {
+  /* Palette — fixed by the SkyGuard design brief. Coral is reserved for
+     anomalies, alerts and destructive actions only. */
+  --color-ink: #101d2b;
+  --color-ink-soft: #24384a;
+  --color-mist: #f1f5f4;
+  --color-mist-deep: #e3ebe9;
+  --color-instrument: #267da8;
+  --color-instrument-deep: #1c5f80;
+  --color-instrument-wash: #e8f2f6;
+  --color-coral: #e87565;
+  /* Text-on-light variants are darkened past the brand coral so body text
+     passes WCAG AA (4.5:1): coral-deep is 5.3:1 on white, muted is 4.9:1
+     on mist. The brand coral itself is kept for fills and large elements. */
+  --color-coral-deep: #b44a38;
+  --color-coral-wash: #fdecea;
+  /* Vermilion — the loud 10% (60/30/10). Coral means anomaly and only
+     appears when something is flagged, so on a healthy network the accent
+     was invisible; vermilion carries the deliberate accent instead, on
+     exactly six spots: primary CTAs, the active nav indicator, selected
+     states, one focal number per view, the hero accent word, and section
+     eyebrows. Vermilion itself is 3.68:1 on white — large text, fills and
+     rings only. Vermilion-deep is 5.58:1 on white / 5.07:1 on mist, so
+     it carries small text and button backgrounds (verified 2026-11-14). */
+  --color-vermilion: #e4572e;
+  --color-vermilion-deep: #b93e19;
+  --color-vermilion-dark: #9c3312;
+  --color-vermilion-wash: #fdede6;
+  --color-healthy: #4a9d85;
+  --color-healthy-deep: #357a66;
+  --color-healthy-wash: #e7f3ef;
+  --color-muted: #5b6b7f;
+  --color-line: rgb(16 29 43 / 0.1);
+  --color-line-strong: rgb(16 29 43 / 0.18);
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, sans-serif;
+  --font-display: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas,
+    monospace;
+
+  --shadow-whisper: 0 1px 2px rgb(16 29 43 / 0.05),
+    0 2px 8px rgb(16 29 43 / 0.04);
+  --shadow-lift: 0 0 0 1px rgb(16 29 43 / 0.06),
+    0 8px 24px rgb(16 29 43 / 0.1);
+
+  /* Liquid-glass shadows. The ring in each is the 1px hairline that keeps
+     a translucent surface legible on a white page; the inset line is the
+     top highlight that sells the glass. */
+  --shadow-glass: inset 0 1px 0 rgb(255 255 255 / 0.75),
+    0 0 0 1px rgb(16 29 43 / 0.06), 0 1px 2px rgb(16 29 43 / 0.04),
+    0 12px 32px rgb(16 29 43 / 0.07);
+  --shadow-glass-lift: inset 0 1px 0 rgb(255 255 255 / 0.85),
+    0 0 0 1px rgb(38 125 168 / 0.1), 0 2px 6px rgb(16 29 43 / 0.05),
+    0 18px 44px rgb(38 125 168 / 0.14);
+  /* Selected glass: the vermilion ring is the selection language, shared
+     with the map marker, the scenario picker and the alert list. */
+  --shadow-glow: inset 0 1px 0 rgb(255 255 255 / 0.85),
+    0 0 0 1.5px rgb(228 87 46 / 0.85), 0 2px 6px rgb(16 29 43 / 0.05),
+    0 16px 36px rgb(228 87 46 / 0.16);
+  /* Primary-button lift: a warm shadow that makes the vermilion CTA sit
+     above the mist without a second colour. */
+  --shadow-accent: 0 1px 2px rgb(185 62 25 / 0.18),
+    0 8px 20px rgb(228 87 46 / 0.22);
+
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  /* easeOutBack — a touch of overshoot for pressable glass, never for
+     data. Drawer curve is the iOS-like curve from Emil Kowalski's set. */
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+html,
+body {
+  overflow-x: clip;
+}
+
+body {
+  @apply bg-mist font-sans text-ink antialiased;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+::selection {
+  background: rgb(38 125 168 / 0.22);
+}
+
+/* Visible keyboard focus on every interactive element, appearing instantly. */
+:focus-visible {
+  outline: 2px solid var(--color-instrument);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+/* Headings: tight tracking at larger sizes, balanced wrapping. */
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+  letter-spacing: -0.01em;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* Tabular figures everywhere a number changes. */
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Leaflet: inherit the product type and keep popups quiet. */
+.leaflet-container {
+  font-family: var(--font-sans);
+  background: var(--color-mist);
+  outline: none;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 12px;
+  box-shadow: var(--shadow-lift);
+}
+
+.leaflet-popup-content {
+  margin: 12px 16px;
+  line-height: 1.5;
+}
+
+/* Custom divIcon markers — no external images. */
+.sg-marker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  border: 2px solid #ffffff;
+  background: var(--color-healthy);
+  color: #ffffff;
+  box-shadow: 0 1px 4px rgb(16 29 43 / 0.35);
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.sg-marker--anomaly {
+  background: var(--color-coral);
+}
+
+.sg-marker--selected {
+  outline: 2px solid var(--color-vermilion);
+  outline-offset: 2px;
+}
+
+.sg-marker--stale {
+  background: var(--color-muted);
+}
+
+/* ── Liquid glass ────────────────────────────────────────────────
+   Frosted surfaces for cards, shells and overlays — glass on LIGHT,
+   never a dark theme. Dense data surfaces (charts, tables, alert
+   detail, simulation forms) stay on solid backgrounds; see Card's
+   variant="solid" default. Glass is chrome, not a reading surface. */
+
+.glass {
+  background: rgb(255 255 255 / 0.66);
+  -webkit-backdrop-filter: blur(18px) saturate(1.4);
+  backdrop-filter: blur(18px) saturate(1.4);
+  border: 1px solid rgb(255 255 255 / 0.65);
+  box-shadow: var(--shadow-glass);
+}
+
+/* More opaque, for the shell and overlays where text sits directly on
+   the surface (sidebar, top bar, toast). */
+.glass-strong {
+  background: rgb(255 255 255 / 0.8);
+  -webkit-backdrop-filter: blur(20px) saturate(1.5);
+  backdrop-filter: blur(20px) saturate(1.5);
+  border: 1px solid rgb(255 255 255 / 0.7);
+  box-shadow: var(--shadow-glass);
+}
+
+/* Subtler glass for dense views (map panel, activity feed): more opaque,
+   less blur, a quieter shadow — the frost stays, the noise goes. */
+.glass-subtle {
+  background: rgb(255 255 255 / 0.82);
+  -webkit-backdrop-filter: blur(12px) saturate(1.25);
+  backdrop-filter: blur(12px) saturate(1.25);
+  border: 1px solid rgb(255 255 255 / 0.7);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.7),
+    0 0 0 1px rgb(16 29 43 / 0.05), 0 1px 2px rgb(16 29 43 / 0.03),
+    0 8px 20px rgb(16 29 43 / 0.05);
+}
+
+/* Selected glass card: ink ring + instrument glow, kept on hover. */
+.glass--selected {
+  box-shadow: var(--shadow-glow);
+}
+
+/* Hover lift + soft glow. Pointer-gated: touch taps never stick a hover
+   state. Transform and box-shadow only — no layout, no paint cost. */
+.glass-hover {
+  transition:
+    transform 200ms var(--ease-out),
+    box-shadow 200ms var(--ease-out),
+    border-color 200ms var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .glass-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glass-lift);
+  }
+
+  .glass--selected.glass-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+  }
+}
+
+.glass-hover:active {
+  transform: translateY(0) scale(0.99);
+  transition-duration: 120ms;
+}
+
+/* ── Liquid mesh ───────────────────────────────────────────────
+   Soft blurred colour fields that give the glass something to refract.
+   Instrument blue + healthy green only — coral never appears in the
+   mesh, because coral means anomaly. Blobs drift slowly on transform
+   only; the field is decorative (aria-hidden in MeshField). */
+
+.mesh-field {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.mesh-blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(70px);
+  animation: sg-drift 26s ease-in-out infinite alternate;
+}
+
+.mesh-blob--blue {
+  background: radial-gradient(
+    closest-side,
+    rgb(38 125 168 / 0.26),
+    transparent
+  );
+}
+
+.mesh-blob--blue-soft {
+  background: radial-gradient(
+    closest-side,
+    rgb(38 125 168 / 0.15),
+    transparent
+  );
+}
+
+.mesh-blob--green {
+  background: radial-gradient(
+    closest-side,
+    rgb(74 157 133 / 0.2),
+    transparent
+  );
+}
+
+@keyframes sg-drift {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(4%, -6%, 0) scale(1.08);
+  }
+}
+
+/* ── Micro-motion ──────────────────────────────────────────────
+   Every animation has one job: feedback (press), state indication
+   (metric change), or spatial consistency (drawer, route change).
+   Durations stay under 300ms except the 320ms drawer. Keyframes only
+   on mount-once elements; nothing here re-triggers rapidly. */
+
+.sg-page {
+  animation: sg-page-in 220ms var(--ease-out);
+}
+
+@keyframes sg-page-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sg-drawer {
+  animation: sg-drawer-in 320ms var(--ease-drawer);
+}
+
+@keyframes sg-drawer-in {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.sg-scrim {
+  animation: sg-scrim-in 200ms var(--ease-out);
+}
+
+@keyframes sg-scrim-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.sg-toast {
+  animation: sg-toast-in 220ms var(--ease-out);
+}
+
+@keyframes sg-toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.sg-value {
+  animation: sg-value-in 200ms var(--ease-out);
+}
+
+@keyframes sg-value-in {
+  from {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Thin scrollbars that stay out of the way. */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(16 29 43 / 0.25) transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* The mesh stays as a static field — no drift at all. */
+  .mesh-blob {
+    animation: none !important;
+  }
+}
