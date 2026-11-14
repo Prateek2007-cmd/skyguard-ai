@@ -1,1 +1,108 @@
-aW1wb3J0IENhcmQgZnJvbSAiLi9DYXJkIjsKaW1wb3J0IHVzZUFuaW1hdGVkTnVtYmVyIGZyb20gIi4uLy4uL2hvb2tzL3VzZUFuaW1hdGVkTnVtYmVyIjsKCi8qKgogKiBNZXRyaWNDYXJkIOKAlCBvbmUgbnVtYmVyLCBuYW1lZCBwbGFpbmx5LiBUaGUgdmFsdWUgbGVhZHMgKHNpemUgKyB3ZWlnaHQgKwogKiB0YWJ1bGFyIGZpZ3VyZXMpOyB0aGUgbGFiZWwgaXMgZGVtb3RlZDsgYSBzdWItbGluZSBleHBsYWlucyB3aGF0IHRoZQogKiBudW1iZXIgbWVhbnMuIFRvbmUgb25seSB3aGVuIHRoZSB2YWx1ZSBpdHNlbGYgaXMgYSBzdGF0dXMg4oCUIGV4Y2VwdAogKiAiYWNjZW50IiwgdGhlIG9uZSBmb2NhbCBudW1iZXIgcGVyIHZpZXcgKHZlcm1pbGlvbiwgMjhweCBzZW1pYm9sZCBpcwogKiBsYXJnZSB0ZXh0IHNvIDMuNjg6MSBwYXNzZXMpLgogKgogKiBHbGFzcyBzdXJmYWNlLiBOdW1lcmljIHZhbHVlcyBnbGlkZSB0byB0aGVpciBuZXcgdmFsdWUgb24gY2hhbmdlCiAqICh1c2VBbmltYXRlZE51bWJlcik7IG5vbi1udW1lcmljIHZhbHVlcyBjcm9zc2ZhZGUgdmlhIGEga2V5ZWQgc3Bhbi4KICogTmVpdGhlciBhbmltYXRlcyBvbiBmaXJzdCBtb3VudC4KICovCmV4cG9ydCBkZWZhdWx0IGZ1bmN0aW9uIE1ldHJpY0NhcmQoewogIGxhYmVsLAogIHZhbHVlLAogIHN1YiwKICB0b25lID0gImRlZmF1bHQiLAogIGljb246IEljb24sCn0pIHsKICBjb25zdCB2YWx1ZVRvbmUgPQogICAgdG9uZSA9PT0gImFsZXJ0IgogICAgICA/ICJ0ZXh0LWNvcmFsLWRlZXAiCiAgICAgIDogdG9uZSA9PT0gImhlYWx0aHkiCiAgICAgICAgPyAidGV4dC1oZWFsdGh5LWRlZXAiCiAgICAgICAgOiB0b25lID09PSAiaW5mbyIKICAgICAgICAgID8gInRleHQtaW5zdHJ1bWVudC1kZWVwIgogICAgICAgICAgOiB0b25lID09PSAiYWNjZW50IgogICAgICAgICAgICA/ICJ0ZXh0LXZlcm1pbGlvbiIKICAgICAgICAgICAgOiAidGV4dC1pbmsiOwogIGNvbnN0IHBhcnNlZCA9IHBhcnNlTWV0cmljVmFsdWUodmFsdWUpOwogIHJldHVybiAoCiAgICA8Q2FyZCB2YXJpYW50PSJnbGFzcyIgcGFkZGluZz0icC00IHNtOnAtNSI+CiAgICAgIDxkaXYgY2xhc3NOYW1lPSJmbGV4IGl0ZW1zLXN0YXJ0IGp1c3RpZnktYmV0d2VlbiBnYXAtMyI+CiAgICAgICAgPHAgY2xhc3NOYW1lPSJ0ZXh0LVsxM3B4XSBmb250LW1lZGl1bSBsZWFkaW5nLXNudWcgdGV4dC1tdXRlZCI+e2xhYmVsfTwvcD4KICAgICAgICB7SWNvbiA/IDxJY29uIGNsYXNzTmFtZT0ibXQtMC41IGgtNCB3LTQgc2hyaW5rLTAgdGV4dC1tdXRlZCIgYXJpYS1oaWRkZW4gLz4gOiBudWxsfQogICAgICA8L2Rpdj4KICAgICAge3BhcnNlZCA/ICgKICAgICAgICA8QW5pbWF0ZWRWYWx1ZSBwYXJzZWQ9e3BhcnNlZH0gY2xhc3NOYW1lPXt2YWx1ZVRvbmV9IC8+CiAgICAgICkgOiAoCiAgICAgICAgPHAKICAgICAgICAgIGtleT17U3RyaW5nKHZhbHVlKX0KICAgICAgICAgIGNsYXNzTmFtZT17YHNnLXZhbHVlIHRudW0gbXQtMiB0ZXh0LVsyOHB4XSBmb250LXNlbWlib2xkIGxlYWRpbmctbm9uZSB0cmFja2luZy10aWdodCAke3ZhbHVlVG9uZX1gfQogICAgICAgID4KICAgICAgICAgIHt2YWx1ZX0KICAgICAgICA8L3A+CiAgICAgICl9CiAgICAgIHtzdWIgPyAoCiAgICAgICAgPHAgY2xhc3NOYW1lPSJtdC0yIHRleHQtWzEzcHhdIGxlYWRpbmctc251ZyB0ZXh0LW11dGVkIj57c3VifTwvcD4KICAgICAgKSA6IG51bGx9CiAgICA8L0NhcmQ+CiAgKTsKfQoKZnVuY3Rpb24gQW5pbWF0ZWRWYWx1ZSh7IHBhcnNlZCwgY2xhc3NOYW1lIH0pIHsKICBjb25zdCBhbmltYXRlZCA9IHVzZUFuaW1hdGVkTnVtYmVyKHBhcnNlZC5udW0pOwogIHJldHVybiAoCiAgICA8cAogICAgICBjbGFzc05hbWU9e2B0bnVtIG10LTIgdGV4dC1bMjhweF0gZm9udC1zZW1pYm9sZCBsZWFkaW5nLW5vbmUgdHJhY2tpbmctdGlnaHQgJHtjbGFzc05hbWV9YH0KICAgID4KICAgICAge2Ake2FuaW1hdGVkLnRvRml4ZWQocGFyc2VkLmRlY2ltYWxzKX0ke3BhcnNlZC5zdWZmaXh9YH0KICAgIDwvcD4KICApOwp9CgovKioKICogUGFyc2VzIHRoZSB2YWx1ZXMgTWV0cmljQ2FyZCBhY3R1YWxseSByZWNlaXZlczogYSBwbGFpbiBudW1iZXIsIGEKICogbnVtZXJpYyBzdHJpbmcgKCI5NS43IiksIGEgcGVyY2VudGFnZSAoIjk1LjclIiksIG9yIGEgY291bnQgd2l0aCBhCiAqIHN1ZmZpeCAoIjMgb2YgNiIpLiBBbnl0aGluZyBlbHNlIChyZWxhdGl2ZSB0aW1lcywgIuKAlCIpIHJldHVybnMgbnVsbAogKiBhbmQgcmVuZGVycyBhcyBhIGtleWVkIGZhZGUuIERlY2ltYWxzIGFyZSBwcmVzZXJ2ZWQgZnJvbSB0aGUgb3JpZ2luYWwKICogc3RyaW5nLiBUaGUgc3VmZml4IGFsbG93bGlzdCBpcyBkZWxpYmVyYXRlOiBhIHRpbWUgbGlrZSAiMTI6MzAiIG11c3QKICogbmV2ZXIgYmUgdHJlYXRlZCBhcyBhIHR3ZWVuYWJsZSBudW1iZXIuCiAqLwpmdW5jdGlvbiBwYXJzZU1ldHJpY1ZhbHVlKHZhbHVlKSB7CiAgY29uc3QgdHJpbW1lZCA9CiAgICB0eXBlb2YgdmFsdWUgPT09ICJudW1iZXIiICYmIE51bWJlci5pc0Zpbml0ZSh2YWx1ZSkKICAgICAgPyBTdHJpbmcodmFsdWUpCiAgICAgIDogdHlwZW9mIHZhbHVlID09PSAic3RyaW5nIgogICAgICAgID8gdmFsdWUudHJpbSgpCiAgICAgICAgOiBudWxsOwogIGlmICh0cmltbWVkID09PSBudWxsKSByZXR1cm4gbnVsbDsKICBjb25zdCB3aG9sZSA9IHRyaW1tZWQubWF0Y2goL14oLT9cZCsoPzpcLihcZCspKT8pJC8pOwogIGlmICh3aG9sZSkgewogICAgcmV0dXJuIHsKICAgICAgbnVtOiBOdW1iZXIod2hvbGVbMV0pLAogICAgICBkZWNpbWFsczogd2hvbGVbMl0gPyB3aG9sZVsyXS5sZW5ndGggOiAwLAogICAgICBzdWZmaXg6ICIiLAogICAgfTsKICB9CiAgY29uc3QgcGVyY2VudCA9IHRyaW1tZWQubWF0Y2goL14oLT9cZCsoPzpcLihcZCspKT8pJSQvKTsKICBpZiAocGVyY2VudCkgewogICAgcmV0dXJuIHsKICAgICAgbnVtOiBOdW1iZXIocGVyY2VudFsxXSksCiAgICAgIGRlY2ltYWxzOiBwZXJjZW50WzJdID8gcGVyY2VudFsyXS5sZW5ndGggOiAwLAogICAgICBzdWZmaXg6ICIlIiwKICAgIH07CiAgfQogIGNvbnN0IGNvdW50ZWQgPSB0cmltbWVkLm1hdGNoKC9eKC0/XGQrKD86XC4oXGQrKSk/KVxzKyhvZlxzK1xkKykkLyk7CiAgaWYgKGNvdW50ZWQpIHsKICAgIHJldHVybiB7CiAgICAgIG51bTogTnVtYmVyKGNvdW50ZWRbMV0pLAogICAgICBkZWNpbWFsczogY291bnRlZFsyXSA/IGNvdW50ZWRbMl0ubGVuZ3RoIDogMCwKICAgICAgc3VmZml4OiBgICR7Y291bnRlZFszXX1gLAogICAgfTsKICB9CiAgcmV0dXJuIG51bGw7Cn0K
+import Card from "./Card";
+import useAnimatedNumber from "../../hooks/useAnimatedNumber";
+
+/**
+ * MetricCard — one number, named plainly. The value leads (size + weight +
+ * tabular figures); the label is demoted; a sub-line explains what the
+ * number means. Tone only when the value itself is a status — except
+ * "accent", the one focal number per view (vermilion, 28px semibold is
+ * large text so 3.68:1 passes).
+ *
+ * Glass surface. Numeric values glide to their new value on change
+ * (useAnimatedNumber); non-numeric values crossfade via a keyed span.
+ * Neither animates on first mount.
+ */
+export default function MetricCard({
+  label,
+  value,
+  sub,
+  tone = "default",
+  icon: Icon,
+}) {
+  const valueTone =
+    tone === "alert"
+      ? "text-coral-deep"
+      : tone === "healthy"
+        ? "text-healthy-deep"
+        : tone === "info"
+          ? "text-instrument-deep"
+          : tone === "accent"
+            ? "text-vermilion"
+            : "text-ink";
+  const parsed = parseMetricValue(value);
+  return (
+    <Card variant="glass" padding="p-4 sm:p-5">
+      <div className="flex items-start justify-between gap-3">
+        <p className="text-[13px] font-medium leading-snug text-muted">{label}</p>
+        {Icon ? <Icon className="mt-0.5 h-4 w-4 shrink-0 text-muted" aria-hidden /> : null}
+      </div>
+      {parsed ? (
+        <AnimatedValue parsed={parsed} className={valueTone} />
+      ) : (
+        <p
+          key={String(value)}
+          className={`sg-value tnum mt-2 text-[28px] font-semibold leading-none tracking-tight ${valueTone}`}
+        >
+          {value}
+        </p>
+      )}
+      {sub ? (
+        <p className="mt-2 text-[13px] leading-snug text-muted">{sub}</p>
+      ) : null}
+    </Card>
+  );
+}
+
+function AnimatedValue({ parsed, className }) {
+  const animated = useAnimatedNumber(parsed.num);
+  return (
+    <p
+      className={`tnum mt-2 text-[28px] font-semibold leading-none tracking-tight ${className}`}
+    >
+      {`${animated.toFixed(parsed.decimals)}${parsed.suffix}`}
+    </p>
+  );
+}
+
+/**
+ * Parses the values MetricCard actually receives: a plain number, a
+ * numeric string ("95.7"), a percentage ("95.7%"), or a count with a
+ * suffix ("3 of 6"). Anything else (relative times, "—") returns null
+ * and renders as a keyed fade. Decimals are preserved from the original
+ * string. The suffix allowlist is deliberate: a time like "12:30" must
+ * never be treated as a tweenable number.
+ */
+function parseMetricValue(value) {
+  const trimmed =
+    typeof value === "number" && Number.isFinite(value)
+      ? String(value)
+      : typeof value === "string"
+        ? value.trim()
+        : null;
+  if (trimmed === null) return null;
+  const whole = trimmed.match(/^(-?\d+(?:\.(\d+))?)$/);
+  if (whole) {
+    return {
+      num: Number(whole[1]),
+      decimals: whole[2] ? whole[2].length : 0,
+      suffix: "",
+    };
+  }
+  const percent = trimmed.match(/^(-?\d+(?:\.(\d+))?)%$/);
+  if (percent) {
+    return {
+      num: Number(percent[1]),
+      decimals: percent[2] ? percent[2].length : 0,
+      suffix: "%",
+    };
+  }
+  const counted = trimmed.match(/^(-?\d+(?:\.(\d+))?)\s+(of\s+\d+)$/);
+  if (counted) {
+    return {
+      num: Number(counted[1]),
+      decimals: counted[2] ? counted[2].length : 0,
+      suffix: ` ${counted[3]}`,
+    };
+  }
+  return null;
+}
