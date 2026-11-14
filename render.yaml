@@ -1,0 +1,12 @@
+# Render service definition for the SkyGuard backend.
+# The frontend deploys separately on Vercel (Root Directory: frontend).
+services:
+  - type: web
+    name: skyguard-api
+    runtime: docker
+    dockerfilePath: ./backend/Dockerfile
+    plan: free
+    healthCheckPath: /api/v1/health
+    envVars:
+      - key: SKYGUARD_DB_PATH
+        value: /app/skyguard.db
