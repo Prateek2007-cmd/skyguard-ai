@@ -1,0 +1,6 @@
+# Full dependencies: server runtime + LSTM training (train_lstm.py only).
+# To run the server you only need requirements-runtime.txt — torch is not
+# required for inference (ONNX Runtime handles it).
+-r requirements-runtime.txt
+torch>=2.0.0
+pandas>=2.0.0
